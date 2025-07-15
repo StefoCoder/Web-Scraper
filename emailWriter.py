@@ -2,15 +2,15 @@ import re
 from openai import OpenAI
 
 client = OpenAI(
-  api_key=""
+  api_key="ENTER KEY HERE"
 )
 
 
 brandName = "Nike"
-cityAndCountry = "Jacksonville, Florida"
-name = "Stefan Sisljagic"
-email = "stefan.s@example.com"
-phone = "(904) 555-1234"
+cityAndCountry = "ENTER LOCATION HERE"
+name = "ENTER NAME HERE"
+email = "ENTER EMAIL HERE"
+phone = "ENTER PHONE NUMBER HERE"
 
 
 def strip_brackets(text):
