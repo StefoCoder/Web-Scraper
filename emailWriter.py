@@ -1,22 +1,21 @@
 import re
 from openai import OpenAI
 
+
+
+
 client = OpenAI(
-  api_key="ENTER KEY HERE"
+  api_key="no free keys for you bum ahh"
 )
 
 
-brandName = "Nike"
-cityAndCountry = "ENTER LOCATION HERE"
-name = "ENTER NAME HERE"
-email = "ENTER EMAIL HERE"
-phone = "ENTER PHONE NUMBER HERE"
+
 
 
 def strip_brackets(text):
     return re.sub(r"\[.*?\]", "", text).strip()
 
-def main(brandName, cityAndCountry, name, email, phone):
+def main(user_choice, cityAndCountry, user_full_name, email, phone):
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
         store=True,
@@ -24,7 +23,7 @@ def main(brandName, cityAndCountry, name, email, phone):
             {
                 "role": "user",
                 "content": (
-                    f"Write a professional sponsorship inquiry email addressed to {brandName} from me: {name}. "
+                    f"Write a professional sponsorship inquiry email addressed to {user_choice} from me: {user_full_name}. "
                     f"Do research on the brand's tennis-related marketing, values, and athlete partnerships to tailor the message. "
                     f"I am a passionate tennis player based in {cityAndCountry}. "
                     f"My training emphasizes performance and community outreach. "
@@ -40,4 +39,3 @@ def main(brandName, cityAndCountry, name, email, phone):
     return strip_brackets(completion.choices[0].message.content)
 
 
-print(main(brandName, cityAndCountry, name, email, phone))

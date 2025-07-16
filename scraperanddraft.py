@@ -63,7 +63,7 @@ def select_brand():
         print("\nThat brand wasn’t found in the list. Please check the spelling or try a different one.")
         select_brand()   
         
-get_brand_names()
+
 
  
 

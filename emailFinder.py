@@ -25,6 +25,3 @@ def find_emails(company_name, num_results=5):
 
     return list(emails)
 
-company_name = "Nike"
-emails = find_emails(company_name, num_results=10)
-print(f"mails found for {company_name}:\n", emails)
